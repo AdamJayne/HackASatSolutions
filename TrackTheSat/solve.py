@@ -41,13 +41,9 @@ sat_name = "PERUSAT 1"
 bluffton = build_topos(lat, lon)
 sat = build_sat(sat_name)
 
+ts = load.timescale().utc(datetime.date.fromtimestamp(demo_time))
 
-ts = build_ts(demo_time)
+print(ts)
+
 difference = sat - bluffton
-topocentric = difference.at(ts.utc(datetime.date.fromtimestamp(demo_time)))
 
-alt, az, distance = topocentric.altaz()
-
-print(alt.degrees)
-print(az.degrees)
-print(int(distance.km), "km")
