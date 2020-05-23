@@ -1,7 +1,6 @@
 import datetime
 from skyfield.api import load, EarthSatellite, Topos
 
-
 """
 Track-a-sat control system
 Latitude: 52.5341
@@ -25,7 +24,7 @@ def build_topos(lat, lon):
 
 sat_dict = {}
 
-with open('active.txt','r') as f:
+with open('Data/active.txt','r') as f:
     data = f.readlines()
     data = [l.replace('\n', "").rstrip() for l in data]
 
