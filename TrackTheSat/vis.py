@@ -4,6 +4,7 @@ from skyfield.api import load, EarthSatellite, Topos
 import matplotlib.pyplot as plt
 from solve import calc_duty_cycle
 
+
 # name = "MAROC-TUBSAT"            
 # line1  = "1 27004U 01056D   20101.12713578 -.00000040  00000-0  47473-5 0  9998"
 # line2 = "2 27004  99.5043 235.4641 0019726 190.1813 347.4559 13.70139743916818"
@@ -88,10 +89,17 @@ expected = [(int(serv1), int(serv2)) for serv1, serv2 in zip(serv1List, serv2Lis
 
 # time az ele
 
-with open('result.txt', 'w+') as f:
+def generate_answer():
+    number_of_observations = 720
+    with open('result.txt', 'w+') as f:
     for i, val in enumerate(timez):
         toWrite = f'{val}, {serv1List[i]}, {serv2List[i]}\n'
         f.write(toWrite)
     f.write("\n")
 
+# with open('result.txt', 'w+') as f:
+#     for i, val in enumerate(timez):
+#         toWrite = f'{val}, {serv1List[i]}, {serv2List[i]}\n'
+#         f.write(toWrite)
+#     f.write("\n")
 

@@ -1,10 +1,13 @@
 
-def parse(c_file):
-    with open(c_file) as f:
-        file_val = f.readlines()
-    print(file_val)
+def parse(response):
+    # with open(c_file) as f:
+    #     file_val = f.readlines()
+    # print(file_val)
+
+    x = response.splitlines()
+
    
-    for line in file_val:
+    for line in x:
         if "Satellite:" in line:
             sat = grab_val(line)
 
@@ -17,7 +20,7 @@ def parse(c_file):
         elif "Start time GMT:" in line:
             s_time = grab_val(line)
 
-    print(sat, float(lat), float(lon), s_time)
+    return sat, float(lat), float(lon), s_time
 
 def grab_val(line_str):
     ret = ""
