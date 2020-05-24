@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>HackASatCompetition</name>
+	<Folder id="00CE09361C13760C2246">
+		<name>HackASatCompetition</name>
+		<visibility>1</visibility>
+		<open>1</open>
+		<description>HackASatComp1</description>
+		<NetworkLink id="0C2869E0B313760C2B01">
+			<name>View Centered Placemark</name>
+			<visibility>1</visibility>
+			<description>This is where the satellite was located when we saw it.</description>
+			<LookAt id="ID">
+				<longitude>-77.035278</longitude>
+				<latitude>38.889484</latitude>
+				<altitude>0</altitude>
+				<heading>56.07438597913867</heading>
+				<tilt>67.63735682138787</tilt>
+				<range>950507.8233036891</range>
+			</LookAt>
+			<Link>
+				<href>http://18.191.77.141:7801/cgi-bin/HSCKML.py</href>
+				<refreshInterval>1</refreshInterval>
+				<viewRefreshMode>onStop</viewRefreshMode>
+				<viewRefreshTime>1</viewRefreshTime>
+				<viewFormat>BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth];CAMERA=[lookatLon],[lookatLat],[lookatRange],[lookatTilt],[lookatHeading];VIEW=[horizFov],[vertFov],[horizPixels],[vertPixels],[terrainEnabled]</viewFormat>
+			</Link>
+		</NetworkLink>
+	</Folder>
+</Document>
+</kml>
