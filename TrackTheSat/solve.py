@@ -31,10 +31,18 @@ def build_ts(time_num):
 def build_sat(sat_name):
     tle1, tle2 = sat_dict[sat_name]
     return EarthSatellite(tle1, tle2, sat_name)
-http://www.math.com/school/subject1/lessons/S1U2L1DP.htmltude_degrees=lon)
 
-def calc_duty_cycle(degrees):
-    return (degrees * (4915/180)) + 2457
+def build_topos(lat, lng):
+    return Topos(latitude_degrees=lat, longitude_degrees=lng)
+
+def calc_duty_cycle(az, el):
+    if az > 180.0:
+        az -= 180.0
+        el = 180.0 - el
+
+    ds1 = (az * (4915/180)) + 2456
+    ds2 = (el * (4915/180)) + 2458
+    return int(ds1), int(ds2)
 
 sat_dict = {}
 
@@ -74,12 +82,9 @@ print(azimuth, elevation)
 # azimuth = 90.0
 
 
-if azimuth > 180.0:
-    azimuth -= 180.0
-    elevation = 180.0 - elevation
 
-ds1 = calc_duty_cycle(azimuth)
-ds2 = calc_duty_cycle(elevation)
+
+ds1, ds2 = calc_duty_cycle(azimuth, elevation)
 
 print(demo_time, ds1, ds2)
 # test azimuth: >270
