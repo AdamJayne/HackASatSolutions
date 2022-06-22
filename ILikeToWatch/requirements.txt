@@ -1,5 +1,5 @@
 certifi==2020.4.5.1
 jplephem==2.14
-numpy==1.18.4
+numpy==1.22.0
 sgp4==2.10
 skyfield==1.20
